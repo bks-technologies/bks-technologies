@@ -43,9 +43,11 @@ Ein Portal, in dem der Kunde sieht, wo sein Projekt steht, Unterlagen sicher üb
 
 **[→ Demo ausprobieren](https://portal.bkstechnologies.de)**: erfundene Firma mit Beispieldaten, ohne Anmeldung. Kunden- und Admin-Sicht lassen sich mit einem Klick wechseln.
 
-| Übersicht | Dateien | Freigaben | Admin-Sicht |
-|:---:|:---:|:---:|:---:|
-| <img src="./assets/portal/uebersicht.png" width="190" alt="Kundenübersicht: offene Aufgaben, ausstehende Dateien, Projektstatus mit Phasen"> | <img src="./assets/portal/dateien.png" width="190" alt="Dateiübergabe mit Fortschrittsbalken und SHA-256-Prüfsumme"> | <img src="./assets/portal/freigaben.png" width="190" alt="Meilenstein freigeben oder Änderung mit Begründung anfordern"> | <img src="./assets/portal/admin.png" width="190" alt="Admin-Sicht: alle Projekte, Punkte mit Handlungsbedarf, Verbindungen"> |
+| Übersicht | Dateien |
+|:---:|:---:|
+| <img src="./assets/portal/uebersicht.png" width="400" alt="Kundenübersicht: offene Aufgaben, ausstehende Dateien, Projektstatus mit Phasen"> | <img src="./assets/portal/dateien.png" width="400" alt="Dateiübergabe mit Fortschrittsbalken und SHA-256-Prüfsumme"> |
+| **Freigaben** | **Admin-Sicht** |
+| <img src="./assets/portal/freigaben.png" width="400" alt="Meilenstein freigeben oder Änderung mit Begründung anfordern"> | <img src="./assets/portal/admin.png" width="400" alt="Admin-Sicht: alle Projekte, Punkte mit Handlungsbedarf, Verbindungen"> |
 
 **Was die Demo zeigt**
 
@@ -57,6 +59,58 @@ Ein Portal, in dem der Kunde sieht, wo sein Projekt steht, Unterlagen sicher üb
 **Ehrlich gesagt:** Die Demo hat kein Backend. Dateien verlassen den Browser nicht, die Synchronisationen sind simuliert. Sie zeigt Oberfläche und Abläufe, so wie wir sie für ein echtes Projekt bauen würden.
 
 **Technik:** Next.js, TypeScript, Tailwind CSS, Framer Motion. Gehostet in Frankfurt (Vercel).
+
+---
+
+### Puls: API- & Webhook-Monitor
+
+*Eigenentwicklung, Demo*
+
+Überwacht Schnittstellen zwischen Systemen: Shop, Warenwirtschaft, Zahlungsanbieter, Partner. Fällt eine aus oder wird langsam, steht es sofort in der Übersicht, im Vorfall-Protokoll und auf Wunsch in Slack.
+
+**[→ Demo ausprobieren](https://puls.bkstechnologies.de)**: ohne Anmeldung. Eigene öffentliche Adressen werden echt geprüft.
+
+| Übersicht | Vorfall |
+|:---:|:---:|
+| <img src="./assets/puls/uebersicht.png" width="400" alt="Übersicht: Endpunkte mit Status grün, gelb und rot, Latenz und Verlauf"> | <img src="./assets/puls/vorfall.png" width="400" alt="Vorfall mit Statuscode 500, Latenz und Fehler-Body"> |
+| **Simulator** | **Handy** |
+| <img src="./assets/puls/simulator.png" width="400" alt="Webhook-Simulator mit Payload-Editor und Antwort"> | <img src="./assets/puls/handy.png" width="160" alt="Übersicht auf dem Handy"> |
+
+**Was die Demo kann**
+
+- Live-Status je Endpunkt mit Latenz, p95, Verfügbarkeit und Verlauf der letzten Prüfungen.
+- Vorfall-Protokoll mit Statuscode, Antwortzeit, Fehler-Body und Zeitleiste.
+- Webhook-Simulator: Test-Nachrichten senden und sehen, wie der Empfänger antwortet.
+- Benachrichtigungen über Slack.
+
+**Technik:** Next.js, TypeScript, Tailwind CSS, Recharts. Prüfungen laufen auf dem Server, geschützt gegen Zugriffe ins interne Netz. Gehostet in Frankfurt (Vercel).
+
+---
+
+### Datenmapper: Daten sauber in ein anderes System übernehmen
+
+*Eigenentwicklung, Demo*
+
+CSV- oder JSON-Datei einlesen, Spalten den Feldern des Zielsystems zuordnen, Fehler vor dem Import sichtbar machen und die gültigen Datensätze paketweise übertragen. Für den Moment, in dem ein Betrieb von Excel oder einer alten Software auf ein neues System umzieht.
+
+**[→ Demo ausprobieren](https://datenmapper.bkstechnologies.de)**: mit Beispieldatei, ohne Anmeldung. Die Datei wird nur im Browser gelesen.
+
+| Import | Zuordnung |
+|:---:|:---:|
+| <img src="./assets/datenmapper/import.png" width="400" alt="Import: Datei per Drag-and-drop, erkanntes Format und Trennzeichen"> | <img src="./assets/datenmapper/zuordnung.png" width="400" alt="Zuordnung: Quellspalten den Feldern der Ziel-API zuordnen, mit Vorschlag und Beispielwerten"> |
+| **Prüfung** | **Übertragung** |
+| <img src="./assets/datenmapper/pruefung.png" width="400" alt="Prüfung: 142 Einträge, 7 fehlerhaft, rot markierte Zellen mit Grund"> | <img src="./assets/datenmapper/einspeisen.png" width="400" alt="Übertragung in Paketen mit Fortschritt, Protokoll und Exporten"> |
+
+**Was die Demo kann**
+
+- CSV mit erkanntem Trennzeichen und JSON, auch verschachtelt. Bis 10 MB.
+- Zuordnungsvorschlag nach Spaltennamen, etwa `Kdnr_01` → `customer_id`. Pflichtfelder ohne Quelle sperren den nächsten Schritt.
+- Prüfung vor dem Import: Pflichtfelder, E-Mail, PLZ, Telefon, Datum (auch der 31.02.), Beträge, Dubletten. Rote Zellen lassen sich per Klick korrigieren.
+- Übertragung in Paketen mit Wiederholung bei Ausfall, Abbruch jederzeit, Protokoll und Fehlerbericht zum Herunterladen.
+
+**Ehrlich gesagt:** Das Zielsystem ist simuliert. Es prüft und antwortet wie eine echte Schnittstelle, speichert aber nichts. Für ein echtes Projekt wird es gegen die API des Kunden ausgetauscht.
+
+**Technik:** Next.js, TypeScript, Tailwind CSS, Vitest. Gehostet in Frankfurt (Vercel).
 
 ---
 
