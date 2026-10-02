@@ -35,4 +35,29 @@ Mitarbeiter stempeln am Handy, der Betrieb bekommt den Arbeitszeitnachweis ferti
 
 ---
 
+### Projektportal: Zusammenarbeit mit Kunden an einem Ort
+
+*Demo-Projekt, Oktober 2026*
+
+Ein Portal, in dem der Kunde sieht, wo sein Projekt steht, Unterlagen sicher übergibt und Meilensteine mit einem Klick freigibt. Das Team sieht in der Admin-Sicht alle Projekte, Änderungswünsche und den Datenabgleich mit den angebundenen Systemen.
+
+**[→ Demo ausprobieren](https://portal.bkstechnologies.de)**: erfundene Firma mit Beispieldaten, ohne Anmeldung. Kunden- und Admin-Sicht lassen sich mit einem Klick wechseln.
+
+| Übersicht | Dateien | Freigaben | Admin-Sicht |
+|:---:|:---:|:---:|:---:|
+| <img src="./assets/portal/uebersicht.png" width="190" alt="Kundenübersicht: offene Aufgaben, ausstehende Dateien, Projektstatus mit Phasen"> | <img src="./assets/portal/dateien.png" width="190" alt="Dateiübergabe mit Fortschrittsbalken und SHA-256-Prüfsumme"> | <img src="./assets/portal/freigaben.png" width="190" alt="Meilenstein freigeben oder Änderung mit Begründung anfordern"> | <img src="./assets/portal/admin.png" width="190" alt="Admin-Sicht: alle Projekte, Punkte mit Handlungsbedarf, Verbindungen"> |
+
+**Was die Demo zeigt**
+
+- Übersicht für den Kunden: eigene Aufgaben, angeforderte Unterlagen, Projektphase und geplanter Livegang.
+- Dateiübergabe mit Vertraulichkeitsstufe. Für jede Datei wird eine SHA-256-Prüfsumme gebildet, damit sich belegen lässt, welche Fassung angekommen ist.
+- Freigaben mit einem Klick, kurz rückgängig zu machen. Wer eine Änderung möchte, schreibt dazu, was sich ändern soll.
+- Synchronisationsverlauf: wann welche Daten zwischen Portal, Warenwirtschaft, CRM und Buchhaltung abgeglichen wurden. Fehlgeschlagene Läufe lassen sich in der Admin-Sicht erneut senden.
+
+**Ehrlich gesagt:** Die Demo hat kein Backend. Dateien verlassen den Browser nicht, die Synchronisationen sind simuliert. Sie zeigt Oberfläche und Abläufe, so wie wir sie für ein echtes Projekt bauen würden.
+
+**Technik:** Next.js, TypeScript, Tailwind CSS, Framer Motion. Gehostet in Frankfurt (Vercel).
+
+---
+
 Sie möchten so etwas für Ihren Betrieb? **[Erstgespräch anfragen](https://bkstechnologies.de/#kontakt)**
