@@ -43,6 +43,8 @@ Ein Portal, in dem der Kunde sieht, wo sein Projekt steht, Unterlagen sicher üb
 
 **[→ Demo ausprobieren](https://portal.bkstechnologies.de)**: erfundene Firma mit Beispieldaten, ohne Anmeldung. Kunden- und Admin-Sicht lassen sich mit einem Klick wechseln.
 
+**[→ Code ansehen](https://github.com/bks-technologies/portal)**
+
 | Übersicht | Dateien |
 |:---:|:---:|
 | <img src="./assets/portal/uebersicht.png" width="400" alt="Kundenübersicht: offene Aufgaben, ausstehende Dateien, Projektstatus mit Phasen"> | <img src="./assets/portal/dateien.png" width="400" alt="Dateiübergabe mit Fortschrittsbalken und SHA-256-Prüfsumme"> |
@@ -70,6 +72,8 @@ Ein Portal, in dem der Kunde sieht, wo sein Projekt steht, Unterlagen sicher üb
 
 **[→ Demo ausprobieren](https://puls.bkstechnologies.de)**: ohne Anmeldung. Eigene öffentliche Adressen werden echt geprüft.
 
+**[→ Code ansehen](https://github.com/bks-technologies/puls)**
+
 | Übersicht | Vorfall |
 |:---:|:---:|
 | <img src="./assets/puls/uebersicht.png" width="400" alt="Übersicht: Endpunkte mit Status grün, gelb und rot, Latenz und Verlauf"> | <img src="./assets/puls/vorfall.png" width="400" alt="Vorfall mit Statuscode 500, Latenz und Fehler-Body"> |
@@ -94,6 +98,8 @@ Ein Portal, in dem der Kunde sieht, wo sein Projekt steht, Unterlagen sicher üb
 CSV- oder JSON-Datei einlesen, Spalten den Feldern des Zielsystems zuordnen, Fehler vor dem Import sichtbar machen und die gültigen Datensätze paketweise übertragen. Für den Moment, in dem ein Betrieb von Excel oder einer alten Software auf ein neues System umzieht.
 
 **[→ Demo ausprobieren](https://datenmapper.bkstechnologies.de)**: mit Beispieldatei, ohne Anmeldung. Die Datei wird nur im Browser gelesen.
+
+**[→ Code ansehen](https://github.com/bks-technologies/datenmapper)**
 
 | Import | Zuordnung |
 |:---:|:---:|
@@ -122,6 +128,8 @@ Eine Bestellung kommt im Shop an und muss in die Warenwirtschaft, ein Kontakt ä
 
 **[→ Demo ausprobieren](https://abgleich.bkstechnologies.de)**: erfundene Firmen mit Beispieldaten, ohne Anmeldung.
 
+**[→ Code ansehen](https://github.com/bks-technologies/abgleich)**
+
 | Übersicht | Konflikt lösen |
 |:---:|:---:|
 | <img src="./assets/abgleich/uebersicht.png" width="400" alt="Übersicht: Kennzahlen, vier Pipelines zwischen Shop, ERP, CRM und Buchhaltung, offene Konflikte"> | <img src="./assets/abgleich/konflikt.png" width="400" alt="Konfliktlöser: System A und System B Feld für Feld nebeneinander, Ergebnis-Vorschau"> |
@@ -148,6 +156,8 @@ Eine Bestellung kommt im Shop an und muss in die Warenwirtschaft, ein Kontakt ä
 Eine neue Mobile App soll Daten aus einem alten Warenwirtschaftssystem holen, aber das alte System verkraftet die vielen Anfragen nicht und antwortet in einem schwerfälligen Format. Pforte steht dazwischen: begrenzt die Anfragen, beantwortet Wiederholungen aus dem Zwischenspeicher, wandelt die alten Antworten in schlankes JSON um und hat einen Not-Aus für den Ernstfall.
 
 **[→ Demo ausprobieren](https://pforte.bkstechnologies.de)**: ohne Anmeldung, mit simuliertem Verkehr. Einfach „Lastspitze simulieren“ drücken und eingreifen.
+
+**[→ Code ansehen](https://github.com/bks-technologies/pforte)**
 
 | Live-Verkehr | Not-Aus | Umwandlung |
 |:---:|:---:|:---:|
